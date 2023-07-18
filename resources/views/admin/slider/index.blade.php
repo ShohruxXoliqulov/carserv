@@ -27,7 +27,7 @@
                     @foreach ($sliders as $item)
                         <tr>
                             <td>{{ ++$loop->index }}</td>
-                            <td>{{ $item->title }}</td>
+                            <td>{!! $item->title !!}</td>
                             <td><img src="/files/{{ $item->img }}" width="60px"></td>
                             <td>{{ $item->created_at }}</td>                            
                             <td>

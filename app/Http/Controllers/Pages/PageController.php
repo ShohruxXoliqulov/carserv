@@ -11,31 +11,31 @@ class PageController extends Controller
         return view('welcome');
     }
 
-    public function about(){
+    public function get_about(){
         return view('pages.about');
     }
 
-    public function error(){
+    public function get_error(){
         return view('pages.error');
     }
 
-    public function booking(){
+    public function get_booking(){
         return view('pages.booking');
     }
 
-    public function contact(){
+    public function get_contact(){
         return view('pages.contact');
     }
 
-    public function services(){
+    public function get_services(){
         return view('pages.services');
     }
 
-    public function technicians(){
+    public function get_technicians(){
         return view('pages.technicians');
     }
 
-    public function testimonial(){
+    public function get_testimonial(){
         return view('pages.testimonial');
     }
 

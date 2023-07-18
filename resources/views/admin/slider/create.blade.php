@@ -28,7 +28,7 @@
                     <form class="create__inputs" action="{{ route('admin.slider.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <strong> Title :</strong>
-                        <input type="text" name="title" value="{{ old('title') }}" class="form-control">
+                        <textarea class="ckeditor form-control" name="title" value="{{ old('title') }}">{{ old('title') }}</textarea>
                         @error('title') {{ $message }} <br><br> @enderror
 
                         <strong> Img(png or jpg) :</strong>
@@ -43,5 +43,11 @@
             </div>
         </main>
         <!-- MAIN -->
+        <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+               $('.ckeditor').ckeditor();
+            });
+        </script>
 
 @endsection

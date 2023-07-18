@@ -82,22 +82,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
-                <a href="{{ route('pages.about') }}" class="nav-item nav-link">About</a>
-                <a href="{{ route('pages.services') }}" class="nav-item nav-link">Services</a>
+                <a href="{{ route('home') }}" class="nav-item nav-link active">@lang('navbar.Home')</a>
+                <a href="{{ route('pages.get_about') }}" class="nav-item nav-link">@lang('navbar.About')</a>
+                <a href="{{ route('pages.get_services') }}" class="nav-item nav-link">@lang('navbar.Services')</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#." class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@lang('navbar.Pages')</a>
                     <div class="dropdown-menu fade-up m-0">
-                        <a href="{{ route('pages.booking') }}" class="dropdown-item">Booking</a>
-                        <a href="{{ route('pages.technicians') }}" class="dropdown-item">Technicians</a>
-                        <a href="{{ route('pages.testimonial') }}" class="dropdown-item">Testimonial</a>
-                        <a href="{{ route('pages.error') }}" class="dropdown-item">404 Page</a>
+                        <a href="{{ route('pages.get_booking') }}" class="dropdown-item">@lang('navbar.Booking')</a>
+                        <a href="{{ route('pages.get_technicians') }}" class="dropdown-item">@lang('navbar.Technicians')</a>
+                        <a href="{{ route('pages.get_testimonial') }}" class="dropdown-item">@lang('navbar.Testimonial')</a>
+                        <a href="{{ route('pages.get_error') }}" class="dropdown-item">@lang('navbar.404_page')</a>
                     </div>
                 </div>
-                <a href="{{ route('pages.contact') }}" class="nav-item nav-link">Contact</a>
+                <a href="{{ route('pages.get_contact') }}" class="nav-item nav-link">@lang('navbar.Contact')</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
+            
+            <a class="btn btn-primaryy px-4" href="/lang/uz"><img style="padding: 3px;" src="/assets/img/Uzbekistan-Flag-icon.png" width="35" height="35" alt="lorem"></a>
+            <a class="btn btn-primaryy px-4" href="/lang/ru"><img style="padding: 3px;" src="/assets/img/united-states-of-america-flag-png-xl.png" width="35" height="35" alt="lorem"></a>
+            <a class="btn btn-primaryy px-4" href="/lang/en"><img style="padding: 3px;" src="/assets/img/Russia-flag.png" width="35" height="35" alt="lorem"></a>        </div>
     </nav>
     <!-- Navbar End -->
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Pages\PageController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SliderController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,24 +23,22 @@ use App\Http\Controllers\Admin\SliderController;
 
 Route::get('/', [PageController::class, 'welcome'])->name('home');
 
-Route::prefix('pages/')->name('pages.')->group(function(){
-    Route::get('about', [PageController::class, 'about'])->name('about');
-    Route::get('error', [PageController::class, 'error'])->name('error');
-    Route::get('booking', [PageController::class, 'booking'])->name('booking');
-    Route::get('contact', [PageController::class, 'contact'])->name('contact');
-    Route::get('services', [PageController::class, 'services'])->name('services');
-    Route::get('technicians', [PageController::class, 'technicians'])->name('technicians');
-    Route::get('testimonial', [PageController::class, 'testimonial'])->name('testimonial');
+Route::auto('pages/', PageController::class);
 
+Route::get('/lang/{lang}', function($lang){
+    session(['lang' => $lang]);
+    return back();
 });
 
 
 // ADMIN
 
-Route::prefix('admin/')->middleware('auth')->name('admin.')->group(function(){
+Route::prefix('admin/')->middleware(['auth', 'test'])->name('admin.')->group(function(){
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
-    Route::resource('slider', SliderController::class);
+    Route::resources([
+        'slider' => SliderController::class,
+    ]);
 
     
 });

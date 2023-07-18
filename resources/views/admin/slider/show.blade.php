@@ -19,8 +19,8 @@
                     <td>{{ $slider->id }}</td>
                 </tr>
                 <tr>
-                    <td>Name</td>
-                    <td>{{ $slider->title }}</td>
+                    <td>Title</td>
+                    <td>{!! $slider->title !!}</td>
                 </tr>
                 <tr>
                     <td>Image</td>

@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Events\LoginEvent;
+use App\Events\LogoutEvent;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -28,6 +30,8 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        $user = auth()->user()->name;
+        event(new LoginEvent($user));
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
@@ -37,6 +41,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        $user = auth()->user()->name;
+        event(new LogoutEvent($user));
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
